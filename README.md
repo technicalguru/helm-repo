@@ -1,2 +1,2 @@
-# helm-deployments
-My HELM deployment descriptors
+# helm-repo
+HELM repository
