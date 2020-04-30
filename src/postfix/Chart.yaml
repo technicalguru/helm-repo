@@ -1,0 +1,12 @@
+apiVersion: v2
+name: postfix
+description: A HELM chart for deploying Postfix/Dovecot
+
+type: application
+
+# Chart version reflects the Postfix version
+version: 1.0.0-rc1
+
+# Postfix version
+appVersion: 3.4.8-01-rc1
+

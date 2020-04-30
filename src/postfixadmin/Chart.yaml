@@ -1,0 +1,12 @@
+apiVersion: v2
+name: postfixadmin
+description: A HELM chart for deploying PostfixAdmin
+
+type: application
+
+# Chart version reflects the app version
+version: 1.0.0-rc1
+
+# PostfixAdmin version
+appVersion: 3.2.4-01-rc1
+

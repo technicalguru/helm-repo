@@ -1,0 +1,12 @@
+apiVersion: v2
+name: roundcube
+description: A HELM chart for deploying Roundcube
+
+type: application
+
+# Chart version reflects the app version
+version: 1.0.0-rc1
+
+# Roundcube version
+appVersion: 1.4.3-01-rc1
+

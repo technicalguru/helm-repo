@@ -1,0 +1,12 @@
+apiVersion: v2
+name: amavis
+description: A HELM chart for deploying Amavisd-new/ClamAV/SpamAssassin
+
+type: application
+
+# Version reflects the app version
+version: 2.11.0-01-rc1
+
+# Amavis version
+appVersion: 2.11.0-01-rc1
+
