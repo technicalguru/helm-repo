@@ -3,7 +3,7 @@ entries:
   amavis:
   - apiVersion: v2
     appVersion: 2.11.0-01-rc1
-    created: "2020-04-30T17:25:04.025856063+02:00"
+    created: "2020-04-30T18:14:05.449863935+02:00"
     description: A HELM chart for deploying Amavisd-new/ClamAV/SpamAssassin
     digest: 8e6a08321f3466e4be674ab2c253ea6069d4ae8e6392d163ea1683bfa66a777d
     name: amavis
@@ -14,7 +14,7 @@ entries:
   mailserver:
   - apiVersion: v2
     appVersion: 1.0.0-rc1
-    created: "2020-04-30T17:25:04.027568255+02:00"
+    created: "2020-04-30T18:14:05.452168897+02:00"
     dependencies:
     - name: mariadb
       repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
@@ -41,7 +41,7 @@ entries:
   mariadb:
   - apiVersion: v2
     appVersion: 10.4.10
-    created: "2020-04-30T17:25:04.027852474+02:00"
+    created: "2020-04-30T18:14:05.452455561+02:00"
     description: A HELM chart for deploying MariaDB (with auditing)
     digest: 1d5c7bab15663b47d69043e63b039bab4908c01c713cedd05f36b9ee5e8f9b2b
     name: mariadb
@@ -52,7 +52,7 @@ entries:
   postfix:
   - apiVersion: v2
     appVersion: 3.4.8-01-rc1
-    created: "2020-04-30T17:25:04.028228939+02:00"
+    created: "2020-04-30T18:14:05.452840082+02:00"
     description: A HELM chart for deploying Postfix/Dovecot
     digest: b5e491e325cc81c8f5e9af70b9c88deb2db03dba35ac5200ff6bf38c0340f77c
     name: postfix
@@ -63,7 +63,7 @@ entries:
   postfixadmin:
   - apiVersion: v2
     appVersion: 3.2.4-01-rc1
-    created: "2020-04-30T17:25:04.028510554+02:00"
+    created: "2020-04-30T18:14:05.453114671+02:00"
     description: A HELM chart for deploying PostfixAdmin
     digest: 4676f51072c286427c9e505ce8e2f41021ebad3afcfc350b1f01263ff6f4a31f
     name: postfixadmin
@@ -74,7 +74,7 @@ entries:
   roundcube:
   - apiVersion: v2
     appVersion: 1.4.3-01-rc1
-    created: "2020-04-30T17:25:04.029137047+02:00"
+    created: "2020-04-30T18:14:05.453449033+02:00"
     description: A HELM chart for deploying Roundcube
     digest: f631c77cb1849fe89269c5653d0225173396773d7f019040b301cab047289e5c
     name: roundcube
@@ -82,4 +82,4 @@ entries:
     urls:
     - roundcube/roundcube-1.4.3-01-rc1.tgz
     version: 1.4.3-01-rc1
-generated: "2020-04-30T17:25:04.025465797+02:00"
+generated: "2020-04-30T18:14:05.449449516+02:00"
