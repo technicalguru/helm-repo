@@ -46,6 +46,10 @@ spec:
           value: "{{ .Values.relayPort }}"
         - name: AV_VIRUSADMIN_EMAIL
           value: "{{ .Values.virusAdminEmail }}"
+        - name: AV_NOTIFY_SENDER
+          value: "{{ .Values.notifySenderEmail }}"
+        - name: AV_NOTIFY_ADMIN
+          value: "{{ .Values.notifyAdminEmail }}"
         ports:
         - name: amavis
           containerPort: 10024

@@ -105,6 +105,8 @@ postfix:
 # $amavis.relayHostname    - name of host for Amavis mail scanning (optional)
 # $amavis.relayPort        - relay port for Amavis mail scanning
 # $amavis.virusAdminEmail  - e-mail of admin to be informed when viruses were quarantined
+# $amavis.notifySenderEmail- sender envelope address, from which notification reports are sent from
+# $amavis.notifyAdminEmail - sender envelope address, from which notification reports are sent from
 # $amavis.configFiles      - definition of additional config files
 # $amavis.additionalTemplateSpec  - Add more deployment template specification at this value
 # $amavis.additionalPodSpec       - Add more pod specification at this value

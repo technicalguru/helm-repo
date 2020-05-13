@@ -44,6 +44,8 @@ defaultDomain: ""
 relayHostname: "postfix-internal"
 relayPort: "10025"
 virusAdminEmail: ""
+notifySenderEmail: ""
+notifyAdminEmail: ""
 
 ###########################
 # Additional customization 
