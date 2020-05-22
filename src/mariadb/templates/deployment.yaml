@@ -31,7 +31,7 @@ spec:
               - key: {{ .Values.affinityLabel }}
                 operator: In
                 values:
-                - {{ .Values.environment }}
+                {{- toYaml .Values.affinityValues | nindent 16 }}
       {{- if .Values.additionalPodSpec -}}
         {{- toYaml .Values.additionalPodSpec | nindent 6 }}
       {{- end }}
