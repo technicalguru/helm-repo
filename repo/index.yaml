@@ -3,7 +3,7 @@ entries:
   amavis:
   - apiVersion: v2
     appVersion: 2.11.0-01-rc1
-    created: "2020-05-22T11:28:39.514776114+02:00"
+    created: "2020-05-30T21:02:49.010318204+02:00"
     description: A HELM chart for deploying Amavisd-new/ClamAV/SpamAssassin
     digest: 8e6a08321f3466e4be674ab2c253ea6069d4ae8e6392d163ea1683bfa66a777d
     name: amavis
@@ -11,10 +11,20 @@ entries:
     urls:
     - amavis/amavis-2.11.0-01-rc1.tgz
     version: 2.11.0-01-rc1
+  - apiVersion: v2
+    appVersion: 2.11.0.0
+    created: "2020-05-30T21:02:49.009873745+02:00"
+    description: A HELM chart for deploying Amavisd-new/ClamAV/SpamAssassin
+    digest: 9cfcb0e4988bbdfaff075eb48a9a43c9f7413359ea9a6bedfb0a65af6c1f8802
+    name: amavis
+    type: application
+    urls:
+    - amavis/amavis-1.0.0.tgz
+    version: 1.0.0
   mailserver:
   - apiVersion: v2
     appVersion: 1.0.0-rc1
-    created: "2020-05-22T11:28:39.517659116+02:00"
+    created: "2020-05-30T21:02:49.013297682+02:00"
     dependencies:
     - name: mariadb
       repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
@@ -41,7 +51,7 @@ entries:
   mariadb:
   - apiVersion: v2
     appVersion: 10.5.3
-    created: "2020-05-22T11:28:39.518476341+02:00"
+    created: "2020-05-30T21:02:49.014336156+02:00"
     description: A HELM chart for deploying MariaDB (with auditing)
     digest: 475fd4cc646e9d236ecd9ca23bee8d9d7c2d97e8c0a75fb5234be132808707c7
     name: mariadb
@@ -51,7 +61,7 @@ entries:
     version: 10.5.3
   - apiVersion: v2
     appVersion: 10.4.10
-    created: "2020-05-22T11:28:39.518079159+02:00"
+    created: "2020-05-30T21:02:49.013796122+02:00"
     description: A HELM chart for deploying MariaDB (with auditing)
     digest: 1d5c7bab15663b47d69043e63b039bab4908c01c713cedd05f36b9ee5e8f9b2b
     name: mariadb
@@ -62,7 +72,7 @@ entries:
   postfix:
   - apiVersion: v2
     appVersion: 3.4.8-01-rc1
-    created: "2020-05-22T11:28:39.518993492+02:00"
+    created: "2020-05-30T21:02:49.015416044+02:00"
     description: A HELM chart for deploying Postfix/Dovecot
     digest: b5e491e325cc81c8f5e9af70b9c88deb2db03dba35ac5200ff6bf38c0340f77c
     name: postfix
@@ -70,10 +80,20 @@ entries:
     urls:
     - postfix/postfix-3.4.8-01-rc1.tgz
     version: 3.4.8-01-rc1
+  - apiVersion: v2
+    appVersion: 3.4.10.0
+    created: "2020-05-30T21:02:49.014816259+02:00"
+    description: A HELM chart for deploying Postfix/Dovecot
+    digest: 315f80834e4baeb0de5e370ab09efe237c26ff76ab8265a176ccecb9e2293a35
+    name: postfix
+    type: application
+    urls:
+    - postfix/postfix-1.0.0.tgz
+    version: 1.0.0
   postfixadmin:
   - apiVersion: v2
     appVersion: 3.2.4-01-rc1
-    created: "2020-05-22T11:28:39.519407248+02:00"
+    created: "2020-05-30T21:02:49.0162338+02:00"
     description: A HELM chart for deploying PostfixAdmin
     digest: 4676f51072c286427c9e505ce8e2f41021ebad3afcfc350b1f01263ff6f4a31f
     name: postfixadmin
@@ -81,10 +101,20 @@ entries:
     urls:
     - postfixadmin/postfixadmin-3.2.4-01-rc1.tgz
     version: 3.2.4-01-rc1
+  - apiVersion: v2
+    appVersion: 3.2.4.0
+    created: "2020-05-30T21:02:49.015736119+02:00"
+    description: A HELM chart for deploying PostfixAdmin
+    digest: 6f5b211d58f0df3f5b2a7b530bf92ac6eff2669b10d79bcef1d67393a94fddea
+    name: postfixadmin
+    type: application
+    urls:
+    - postfixadmin/postfixadmin-1.0.0.tgz
+    version: 1.0.0
   roundcube:
   - apiVersion: v2
     appVersion: 1.4.3-01-rc1
-    created: "2020-05-22T11:28:39.519797431+02:00"
+    created: "2020-05-30T21:02:49.017035929+02:00"
     description: A HELM chart for deploying Roundcube
     digest: f631c77cb1849fe89269c5653d0225173396773d7f019040b301cab047289e5c
     name: roundcube
@@ -92,4 +122,14 @@ entries:
     urls:
     - roundcube/roundcube-1.4.3-01-rc1.tgz
     version: 1.4.3-01-rc1
-generated: "2020-05-22T11:28:39.514087263+02:00"
+  - apiVersion: v2
+    appVersion: 1.4.4.0
+    created: "2020-05-30T21:02:49.016545947+02:00"
+    description: A HELM chart for deploying Roundcube
+    digest: a8b10ae7b6caa457c77ee00118c9aed6a1c3562df68cb4a8935c81842d01cdf9
+    name: roundcube
+    type: application
+    urls:
+    - roundcube/roundcube-1.0.0.tgz
+    version: 1.0.0
+generated: "2020-05-30T21:02:49.008999253+02:00"
