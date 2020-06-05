@@ -5,8 +5,8 @@ description: A HELM chart for deploying Postfix/Dovecot
 type: application
 
 # Chart version does not reflect the Postfix version
-version: 1.0.0
+version: 1.0.1
 
 # Postfix version
-appVersion: 3.4.10.0
+appVersion: 3.4.10.1
 
