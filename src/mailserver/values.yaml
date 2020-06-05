@@ -32,6 +32,8 @@ imagePullPolicy: &default_pull_policy "IfNotPresent"
 # $mariadb.additionalContainerSpec - Add more container specification at this value
 mariadb:
   affinityLabel: *default_affinity_label
+  affinityValues:
+  - "production"
   environment: *default_environment
   rootPassword: "my-db-root-password"
   image:
