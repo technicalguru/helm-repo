@@ -70,6 +70,9 @@ dbSetupPassword: "password"
 # $origin                  - default origin of mails, usually default mail domain
 # $amavisHostname          - name of relay host for Amavis mail scanning (optional)
 # $amavisPort              - relay port for Amavis mail scanning
+# $enableDkim              - whether to enable DKIM signing
+# $dkimHostname            - name of milter host for DKIM signing
+# $dkimPort                - milter port for DKIM signing 
 # $tlsCertificatePath      - directory where TLS certificate files are stored
 # $tlsCAPath               - directory where trusted CA certificates are stored
 # $tlsAdminEmail           - e-mail of admin to be informed when TLS certificate is about to expire
@@ -83,6 +86,10 @@ serverName: ""
 origin: ""
 amavisHostname: "amavis"
 amavisPort: "10024"
+enableDkim: false
+dkimHostname: "dkim"
+dkimPort: "41001"
+enableUtf8: "yes"
 tlsCertificatePath: "/var/certificate"
 tlsCAPath: "/etc/ssl/certs"
 tlsAdminEmail: ""

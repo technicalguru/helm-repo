@@ -58,6 +58,12 @@ spec:
           value: {{ include "postfix.amavisHostname" . }}
         - name: PF_AMAVIS_SERVICE_PORT
           value: "{{ .Values.amavisPort }}"
+{{- if .Values.enableDkim }}
+        - name: PF_DKIM_SERVICE_NAME
+          value: {{ include "postfix.dkimHostname" . }}
+        - name: PF_DKIM_SERVICE_PORT
+          value: "{{ .Values.dkimPort }}"
+{{- end }}
 {{- if .Values.tlsCertificate }}
         - name: PF_TLS_CERT_FILE
           value: "{{ .Values.tlsCertificatePath }}/tls.crt"
@@ -72,6 +78,8 @@ spec:
           value: "{{ .Values.tlsCAPath }}"
         - name: PF_TLS_ADMIN_EMAIL
           value: "{{ .Values.tlsAdminEmail }}"
+        - name: PF_ENABLE_UTF8
+          value: "{{ .Values.enableUtf8 }}"
         ports:
         - name: smtp
           containerPort: 25

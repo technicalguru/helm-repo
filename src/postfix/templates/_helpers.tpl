@@ -111,6 +111,13 @@ Renders the full Amavis hostname if required
 {{- end -}}
 
 {{/*
+Renders the full DKIM hostname if required
+*/}}
+{{- define "postfix.dkimHostname" -}}
+{{- include "postfix.serviceName" (dict "Context" . "Value" .Values.dkimHostname) }}
+{{- end -}}
+
+{{/*
 Renders the full database hostname if required
 */}}
 {{- define "postfix.dbHostname" -}}
