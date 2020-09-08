@@ -43,7 +43,7 @@ spec:
         - name: DKIM_SETUP_PASS
           value: "{{ .Values.dbSetupPassword }}"
         - name: DKIM_DB_HOST
-          value: "{{ .Values.dbHostname }}"
+          value: "{{ include "opendkim.dbHostname" . }}"
         - name: DKIM_DB_USER
           value: "{{ .Values.dbUser }}"
         - name: DKIM_DB_PASS

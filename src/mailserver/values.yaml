@@ -50,6 +50,7 @@ mariadb:
 # $postfix.service.smtpPort        - SMTP Port
 # $postfix.service.pop3Port        - POP3 Port
 # $postfix.service.imapPort        - IMAP Port
+# $postfix.service.smtpsPort       - SMTPS Port
 # $postfix.service.submissionPort  - Submission Port
 # $postfix.service.imapsPort       - IMAPS Port
 # $postfix.service.pop3sPort       - POP3S Port
@@ -80,6 +81,8 @@ mariadb:
 postfix:
   affinityLabel: *default_affinity_label
   environment: *default_environment
+  affinityValues:
+  - "production"
   image:
     pullPolicy: *default_pull_policy
   service:
@@ -89,6 +92,7 @@ postfix:
   defaultDomain: "my-domain.tld"
   serverName: "my-mailserver"
   origin: "my-domain.tld"
+  enableDkim: true
   tlsAdminEmail: "tls-admin@my-domain.tld"
   tlsCertificateChain: ""
   tlsCertificate: ""
@@ -116,11 +120,33 @@ postfix:
 amavis:
   affinityLabel: *default_affinity_label
   environment: *default_environment
+  affinityValues:
+  - "production"
   image:
     pullPolicy: *default_pull_policy
   defaultDomain: "my-domain.tld"
   virusAdminEmail: "virus-admin@my-domain.tld"
 
+# $opendkim.affinityLabel      - the key of the node label for affinity stickiness
+# $opendkim.image              - definition of docker image
+# $opendkim.image.repository   - the image name (without tag)
+# $opendkim.image.pullPolicy   - The pull policy for the image
+# $opendkim.additionalLabels   - additional labels to attach to a pod
+# $opendkim.dbHostname         - the database host
+# $opendkim.dbName             - the database instance name
+# $opendkim.dbUser             - the database user to use
+# $opendkim.dbPassword         - the password of the database user to use
+# $opendkim.dbSetupPassword    - the root password for setup
+opendkim:
+  affinityLabel: *default_affinity_label
+  environment: *default_environment
+  affinityValues:
+  - "production"
+  image:
+    pullPolicy: *default_pull_policy
+  defaultDomain: "my-domain.tld"
+  dbPassword: "my-db-postfix-password"
+  dbSetupPassword: "my-db-root-password"
 
 # $postfixadmin.image              - definition of docker image
 # $postfixadmin.image.repository   - the image name (without tag)
@@ -144,6 +170,10 @@ amavis:
 # $postfixadmin.additionalPodSpec       - Add more pod specification at this value
 # $postfixadmin.additionalContainerSpec - Add more container specification at this value
 postfixadmin:
+  affinityLabel: *default_affinity_label
+  environment: *default_environment
+  affinityValues:
+  - "production"
   image:
     pullPolicy: *default_pull_policy
   dbPassword: "my-db-postfix-password"
@@ -173,6 +203,10 @@ postfixadmin:
 # $roundcube.additionalPodSpec       - Add more pod specification at this value
 # $roundcube.additionalContainerSpec - Add more container specification at this value
 roundcube:
+  affinityLabel: *default_affinity_label
+  environment: *default_environment
+  affinityValues:
+  - "production"
   image:
     pullPolicy: *default_pull_policy
   dbPassword: "my-db-roundcube-password"

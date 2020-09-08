@@ -103,3 +103,10 @@ Please note that you need to call this template with (dict "Context" . "Value" "
 {{- end -}}
 {{- end -}}
 
+{{/*
+Renders the full database hostname if required
+*/}}
+{{- define "opendkim.dbHostname" -}}
+{{- include "opendkim.serviceName" (dict "Context" . "Value" .Values.dbHostname) }}
+{{- end -}}
+
