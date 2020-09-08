@@ -20,9 +20,9 @@ spec:
       port: {{ .Values.service.imapPort }}
       targetPort: imap
       protocol: TCP
-    - name: oldSubmission
-      port: {{ .Values.service.submissionOldPort }}
-      targetPort: submission
+    - name: stmps
+      port: {{ .Values.service.smtpsPort }}
+      targetPort: smtps
       protocol: TCP
     - name: submission
       port: {{ .Values.service.submissionPort }}

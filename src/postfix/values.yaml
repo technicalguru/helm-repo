@@ -22,11 +22,11 @@ additionalLabels: {}
 # Service settings
 #####################
 # $service.externalIP -the bind address of your node where services shall listen
-# $service.smtpPort - SMTP Port
-# $service.pop3Port - POP3 Port
-# $service.imapPort - IMAP Port
-# $service.submissionOldPort - Submission Port (old port, targeted to submissionPort)
-# $service.submissionPort - Submission Port
+# $service.smtpPort  - SMTP Port
+# $service.pop3Port  - POP3 Port
+# $service.imapPort  - IMAP Port
+# $service.smtpsPort - SMTPS Port
+# $service.submissionPort - Submission Port with STARTTLS
 # $service.imapsPort - IMAPS Port
 # $service.pop3sPort - POP3S Port
 # $service.relayPort - Relay port for incoming mail scan results (from amavis)
@@ -35,7 +35,7 @@ service:
   smtpPort: 25
   pop3Port: 110
   imapPort: 143
-  submissionOldPort: 465
+  smtpsPort: 465
   submissionPort: 587
   imapsPort: 993
   pop3sPort: 995
