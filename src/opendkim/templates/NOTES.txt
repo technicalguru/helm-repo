@@ -1,0 +1,7 @@
+OpenDKIM v{{ .Chart.AppVersion }} installed: 
+   Namespace     {{ .Release.Namespace }}
+   HELM instance {{ include "opendkim.fullname" . }}
+   Image         {{ .Values.image.repository }}:{{ .Chart.AppVersion }}
+   Chart         {{ .Chart.Name }} v{{ .Chart.Version }}
+   Service       {{ include "opendkim.fullname" . }}
+   Deployment    {{ include "opendkim.fullname" . }}

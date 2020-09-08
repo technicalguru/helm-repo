@@ -1,0 +1,12 @@
+apiVersion: v2
+name: opendkim
+description: A HELM chart for deploying OpenDKIM milter
+
+type: application
+
+# Version does not reflect the app version
+version: 1.0.0
+
+# OpenDKIM version
+appVersion: 2.11.0.0
+
