@@ -89,7 +89,7 @@ origin: ""
 amavisHostname: "amavis"
 amavisPort: "10024"
 enableDkim: false
-dkimHostname: "dkim"
+dkimHostname: "opendkim"
 dkimPort: "41001"
 enableUtf8: "yes"
 tlsCertificatePath: "/var/certificate"
