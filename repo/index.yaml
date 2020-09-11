@@ -3,7 +3,7 @@ entries:
   amavis:
   - apiVersion: v2
     appVersion: 2.11.0-01-rc1
-    created: "2020-09-11T08:52:20.685012778+02:00"
+    created: "2020-09-11T08:55:06.504358881+02:00"
     description: A HELM chart for deploying Amavisd-new/ClamAV/SpamAssassin
     digest: 8e6a08321f3466e4be674ab2c253ea6069d4ae8e6392d163ea1683bfa66a777d
     name: amavis
@@ -13,7 +13,7 @@ entries:
     version: 2.11.0-01-rc1
   - apiVersion: v2
     appVersion: 2.11.0.0
-    created: "2020-09-11T08:52:20.684720614+02:00"
+    created: "2020-09-11T08:55:06.504085181+02:00"
     description: A HELM chart for deploying Amavisd-new/ClamAV/SpamAssassin
     digest: 9cfcb0e4988bbdfaff075eb48a9a43c9f7413359ea9a6bedfb0a65af6c1f8802
     name: amavis
@@ -23,8 +23,37 @@ entries:
     version: 1.0.0
   mailserver:
   - apiVersion: v2
+    appVersion: 1.1.1
+    created: "2020-09-11T08:55:06.517917752+02:00"
+    dependencies:
+    - name: mariadb
+      repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
+      version: 10.5.5
+    - name: postfix
+      repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
+      version: 1.1.0
+    - name: amavis
+      repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
+      version: 1.0.0
+    - name: opendkim
+      repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
+      version: 1.0.0
+    - name: postfixadmin
+      repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
+      version: 1.0.0
+    - name: roundcube
+      repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
+      version: 1.0.1
+    description: A HELM chart for deploying a complete mailserver
+    digest: 2ff285093c4f85c709bc70269f76c3e53b98aed7d8b4119643f4641ea9c9bb83
+    name: mailserver
+    type: application
+    urls:
+    - mailserver/mailserver-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v2
     appVersion: 1.1.0
-    created: "2020-09-11T08:52:20.695287356+02:00"
+    created: "2020-09-11T08:55:06.51515852+02:00"
     dependencies:
     - name: mariadb
       repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
@@ -53,7 +82,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.2
-    created: "2020-09-11T08:52:20.692880643+02:00"
+    created: "2020-09-11T08:55:06.512651437+02:00"
     dependencies:
     - name: mariadb
       repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
@@ -79,7 +108,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2020-09-11T08:52:20.691170446+02:00"
+    created: "2020-09-11T08:55:06.51064329+02:00"
     dependencies:
     - name: mariadb
       repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
@@ -105,7 +134,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-11T08:52:20.689363009+02:00"
+    created: "2020-09-11T08:55:06.508706049+02:00"
     dependencies:
     - name: mariadb
       repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
@@ -131,7 +160,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 1.0.0-rc1
-    created: "2020-09-11T08:52:20.686833896+02:00"
+    created: "2020-09-11T08:55:06.506905648+02:00"
     dependencies:
     - name: mariadb
       repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
@@ -158,7 +187,7 @@ entries:
   mariadb:
   - apiVersion: v2
     appVersion: 10.5.5
-    created: "2020-09-11T08:52:20.696513233+02:00"
+    created: "2020-09-11T08:55:06.51891877+02:00"
     description: A HELM chart for deploying MariaDB (with auditing)
     digest: 0c90a5dbb8728f6e107bb7fb92b92b04d0cbe8b217c764914ec1c3b9a9d2c6c7
     name: mariadb
@@ -168,7 +197,7 @@ entries:
     version: 10.5.5
   - apiVersion: v2
     appVersion: 10.5.3
-    created: "2020-09-11T08:52:20.696076068+02:00"
+    created: "2020-09-11T08:55:06.518576785+02:00"
     description: A HELM chart for deploying MariaDB (with auditing)
     digest: 475fd4cc646e9d236ecd9ca23bee8d9d7c2d97e8c0a75fb5234be132808707c7
     name: mariadb
@@ -178,7 +207,7 @@ entries:
     version: 10.5.3
   - apiVersion: v2
     appVersion: 10.4.10
-    created: "2020-09-11T08:52:20.695656444+02:00"
+    created: "2020-09-11T08:55:06.51823567+02:00"
     description: A HELM chart for deploying MariaDB (with auditing)
     digest: 1d5c7bab15663b47d69043e63b039bab4908c01c713cedd05f36b9ee5e8f9b2b
     name: mariadb
@@ -189,7 +218,7 @@ entries:
   opendkim:
   - apiVersion: v2
     appVersion: 2.11.0.0
-    created: "2020-09-11T08:52:20.697340324+02:00"
+    created: "2020-09-11T08:55:06.519245402+02:00"
     description: A HELM chart for deploying OpenDKIM milter
     digest: c5aecdcedb308989ef73ad20cbd9f701c6a6e225fa573cb019ffdc0a209a20f5
     name: opendkim
@@ -200,7 +229,7 @@ entries:
   postfix:
   - apiVersion: v2
     appVersion: 3.4.8-01-rc1
-    created: "2020-09-11T08:52:20.699665351+02:00"
+    created: "2020-09-11T08:55:06.521061152+02:00"
     description: A HELM chart for deploying Postfix/Dovecot
     digest: b5e491e325cc81c8f5e9af70b9c88deb2db03dba35ac5200ff6bf38c0340f77c
     name: postfix
@@ -210,7 +239,7 @@ entries:
     version: 3.4.8-01-rc1
   - apiVersion: v2
     appVersion: 3.4.14.0
-    created: "2020-09-11T08:52:20.699195531+02:00"
+    created: "2020-09-11T08:55:06.520673084+02:00"
     description: A HELM chart for deploying Postfix/Dovecot
     digest: fe64939e070cb699bbd5844310e4d384e96bf0114a5aadd56ff5781c9e3ee5fb
     name: postfix
@@ -220,7 +249,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 3.4.10.1
-    created: "2020-09-11T08:52:20.69864997+02:00"
+    created: "2020-09-11T08:55:06.520181878+02:00"
     description: A HELM chart for deploying Postfix/Dovecot
     digest: 6ef5c56825f3f3d74b25dae9935f8d46d4bee8da5e82a3d2e82a7629b3772489
     name: postfix
@@ -230,7 +259,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 3.4.10.0
-    created: "2020-09-11T08:52:20.698130044+02:00"
+    created: "2020-09-11T08:55:06.519717776+02:00"
     description: A HELM chart for deploying Postfix/Dovecot
     digest: 315f80834e4baeb0de5e370ab09efe237c26ff76ab8265a176ccecb9e2293a35
     name: postfix
@@ -241,7 +270,7 @@ entries:
   postfixadmin:
   - apiVersion: v2
     appVersion: 3.2.4-01-rc1
-    created: "2020-09-11T08:52:20.700375941+02:00"
+    created: "2020-09-11T08:55:06.521736234+02:00"
     description: A HELM chart for deploying PostfixAdmin
     digest: 4676f51072c286427c9e505ce8e2f41021ebad3afcfc350b1f01263ff6f4a31f
     name: postfixadmin
@@ -251,7 +280,7 @@ entries:
     version: 3.2.4-01-rc1
   - apiVersion: v2
     appVersion: 3.2.4.0
-    created: "2020-09-11T08:52:20.700048139+02:00"
+    created: "2020-09-11T08:55:06.521411875+02:00"
     description: A HELM chart for deploying PostfixAdmin
     digest: 6f5b211d58f0df3f5b2a7b530bf92ac6eff2669b10d79bcef1d67393a94fddea
     name: postfixadmin
@@ -262,7 +291,7 @@ entries:
   roundcube:
   - apiVersion: v2
     appVersion: 1.4.3-01-rc1
-    created: "2020-09-11T08:52:20.701368647+02:00"
+    created: "2020-09-11T08:55:06.522842231+02:00"
     description: A HELM chart for deploying Roundcube
     digest: f631c77cb1849fe89269c5653d0225173396773d7f019040b301cab047289e5c
     name: roundcube
@@ -272,7 +301,7 @@ entries:
     version: 1.4.3-01-rc1
   - apiVersion: v2
     appVersion: 1.4.8.0
-    created: "2020-09-11T08:52:20.701062472+02:00"
+    created: "2020-09-11T08:55:06.522507062+02:00"
     description: A HELM chart for deploying Roundcube
     digest: 2ca52eafab59c732da4b062e0b8e6deca933dcdd7f45b0416c2e020a6ba3e37b
     name: roundcube
@@ -282,7 +311,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.4.4.0
-    created: "2020-09-11T08:52:20.700721747+02:00"
+    created: "2020-09-11T08:55:06.522141804+02:00"
     description: A HELM chart for deploying Roundcube
     digest: a8b10ae7b6caa457c77ee00118c9aed6a1c3562df68cb4a8935c81842d01cdf9
     name: roundcube
@@ -290,4 +319,4 @@ entries:
     urls:
     - roundcube/roundcube-1.0.0.tgz
     version: 1.0.0
-generated: "2020-09-11T08:52:20.684266354+02:00"
+generated: "2020-09-11T08:55:06.503647286+02:00"
