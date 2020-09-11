@@ -4,7 +4,7 @@ description: A HELM chart for deploying MariaDB (with auditing)
 type: application
 
 # The chart version will rflect the app version
-version: 10.5.3
+version: 10.5.5
 # MariaDB version
-appVersion: 10.5.3
+appVersion: 10.5.5
 
