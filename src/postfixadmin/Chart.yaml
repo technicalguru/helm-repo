@@ -5,8 +5,8 @@ description: A HELM chart for deploying PostfixAdmin
 type: application
 
 # Chart version does not reflect the app version
-version: 1.0.0
+version: 1.2.0
 
 # PostfixAdmin version
-appVersion: 3.2.4.0
+appVersion: 3.3.10.0
 
