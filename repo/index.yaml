@@ -3,7 +3,7 @@ entries:
   amavis:
   - apiVersion: v2
     appVersion: 2.11.0-01-rc1
-    created: "2021-10-02T16:37:49.612480117+02:00"
+    created: "2022-04-03T11:16:04.441311038+02:00"
     description: A HELM chart for deploying Amavisd-new/ClamAV/SpamAssassin
     digest: 8e6a08321f3466e4be674ab2c253ea6069d4ae8e6392d163ea1683bfa66a777d
     name: amavis
@@ -12,8 +12,18 @@ entries:
     - amavis/amavis-2.11.0-01-rc1.tgz
     version: 2.11.0-01-rc1
   - apiVersion: v2
+    appVersion: 2.11.1.1
+    created: "2022-04-03T11:16:04.440787706+02:00"
+    description: A HELM chart for deploying Amavisd-new/ClamAV/SpamAssassin
+    digest: c9139336d65db5ff6690548170e0309a454c2424068d3bf02f371da2ff9fa0ca
+    name: amavis
+    type: application
+    urls:
+    - amavis/amavis-1.3.0.tgz
+    version: 1.3.0
+  - apiVersion: v2
     appVersion: 2.11.1.0
-    created: "2021-10-02T16:37:49.611391177+02:00"
+    created: "2022-04-03T11:16:04.439645861+02:00"
     description: A HELM chart for deploying Amavisd-new/ClamAV/SpamAssassin
     digest: 0dc2e2073f41be64908901ebcc4aa353602d8dfdd040898671e878dd31795f01
     name: amavis
@@ -23,7 +33,7 @@ entries:
     version: 1.2.0
   - apiVersion: v2
     appVersion: 2.11.0.0
-    created: "2021-10-02T16:37:49.610885023+02:00"
+    created: "2022-04-03T11:16:04.439147795+02:00"
     description: A HELM chart for deploying Amavisd-new/ClamAV/SpamAssassin
     digest: 9cfcb0e4988bbdfaff075eb48a9a43c9f7413359ea9a6bedfb0a65af6c1f8802
     name: amavis
@@ -34,7 +44,7 @@ entries:
   mailserver:
   - apiVersion: v2
     appVersion: 1.2.0
-    created: "2021-10-02T16:37:49.62916247+02:00"
+    created: "2022-04-03T11:16:04.459682543+02:00"
     dependencies:
     - name: mariadb
       repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
@@ -63,7 +73,7 @@ entries:
     version: 1.2.0
   - apiVersion: v2
     appVersion: 1.1.1
-    created: "2021-10-02T16:37:49.6269256+02:00"
+    created: "2022-04-03T11:16:04.456416876+02:00"
     dependencies:
     - name: mariadb
       repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
@@ -92,7 +102,7 @@ entries:
     version: 1.1.1
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2021-10-02T16:37:49.624491309+02:00"
+    created: "2022-04-03T11:16:04.452992206+02:00"
     dependencies:
     - name: mariadb
       repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
@@ -121,7 +131,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.2
-    created: "2021-10-02T16:37:49.621526113+02:00"
+    created: "2022-04-03T11:16:04.450602982+02:00"
     dependencies:
     - name: mariadb
       repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
@@ -147,7 +157,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2021-10-02T16:37:49.619155942+02:00"
+    created: "2022-04-03T11:16:04.448565766+02:00"
     dependencies:
     - name: mariadb
       repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
@@ -173,7 +183,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-10-02T16:37:49.616939914+02:00"
+    created: "2022-04-03T11:16:04.446467159+02:00"
     dependencies:
     - name: mariadb
       repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
@@ -199,7 +209,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 1.0.0-rc1
-    created: "2021-10-02T16:37:49.614657904+02:00"
+    created: "2022-04-03T11:16:04.443560049+02:00"
     dependencies:
     - name: mariadb
       repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
@@ -225,8 +235,18 @@ entries:
     version: 1.0.0-rc1
   mariadb:
   - apiVersion: v2
+    appVersion: 10.6.7
+    created: "2022-04-03T11:16:04.462494494+02:00"
+    description: A HELM chart for deploying MariaDB (with auditing)
+    digest: c7a3eec3085f41c5ce2ae42e28ae9304e591dd24d656f544d51e87ca4befa614
+    name: mariadb
+    type: application
+    urls:
+    - mariadb/mariadb-10.6.7.tgz
+    version: 10.6.7
+  - apiVersion: v2
     appVersion: 10.6.4
-    created: "2021-10-02T16:37:49.631145139+02:00"
+    created: "2022-04-03T11:16:04.462112275+02:00"
     description: A HELM chart for deploying MariaDB (with auditing)
     digest: fcda9a1f2f8c65af97f6d448e17565e958464dde2cfd95cf4de085622532d0c0
     name: mariadb
@@ -236,7 +256,7 @@ entries:
     version: 10.6.4
   - apiVersion: v2
     appVersion: 10.5.5
-    created: "2021-10-02T16:37:49.630658427+02:00"
+    created: "2022-04-03T11:16:04.4612783+02:00"
     description: A HELM chart for deploying MariaDB (with auditing)
     digest: 0c90a5dbb8728f6e107bb7fb92b92b04d0cbe8b217c764914ec1c3b9a9d2c6c7
     name: mariadb
@@ -246,7 +266,7 @@ entries:
     version: 10.5.5
   - apiVersion: v2
     appVersion: 10.5.3
-    created: "2021-10-02T16:37:49.630126778+02:00"
+    created: "2022-04-03T11:16:04.460748842+02:00"
     description: A HELM chart for deploying MariaDB (with auditing)
     digest: 475fd4cc646e9d236ecd9ca23bee8d9d7c2d97e8c0a75fb5234be132808707c7
     name: mariadb
@@ -256,7 +276,7 @@ entries:
     version: 10.5.3
   - apiVersion: v2
     appVersion: 10.4.10
-    created: "2021-10-02T16:37:49.629680768+02:00"
+    created: "2022-04-03T11:16:04.460174813+02:00"
     description: A HELM chart for deploying MariaDB (with auditing)
     digest: 1d5c7bab15663b47d69043e63b039bab4908c01c713cedd05f36b9ee5e8f9b2b
     name: mariadb
@@ -266,8 +286,18 @@ entries:
     version: 10.4.10
   opendkim:
   - apiVersion: v2
+    appVersion: 2.11.0.2
+    created: "2022-04-03T11:16:04.463828715+02:00"
+    description: A HELM chart for deploying OpenDKIM milter
+    digest: 8c0262d538f77c9ffdbce5401ca9ba2eb7bfaafad95b6acefde91e094891d41c
+    name: opendkim
+    type: application
+    urls:
+    - opendkim/opendkim-1.3.0.tgz
+    version: 1.3.0
+  - apiVersion: v2
     appVersion: 2.11.0.1
-    created: "2021-10-02T16:37:49.632664165+02:00"
+    created: "2022-04-03T11:16:04.46346247+02:00"
     description: A HELM chart for deploying OpenDKIM milter
     digest: 7833ac5170fae77e4a1791f6ac2f8507be1620de6a02daac5c2815781769c89a
     name: opendkim
@@ -277,7 +307,7 @@ entries:
     version: 1.2.0
   - apiVersion: v2
     appVersion: 2.11.0.0
-    created: "2021-10-02T16:37:49.631617408+02:00"
+    created: "2022-04-03T11:16:04.462965795+02:00"
     description: A HELM chart for deploying OpenDKIM milter
     digest: c5aecdcedb308989ef73ad20cbd9f701c6a6e225fa573cb019ffdc0a209a20f5
     name: opendkim
@@ -288,7 +318,7 @@ entries:
   postfix:
   - apiVersion: v2
     appVersion: 3.4.8-01-rc1
-    created: "2021-10-02T16:37:49.636327482+02:00"
+    created: "2022-04-03T11:16:04.468376647+02:00"
     description: A HELM chart for deploying Postfix/Dovecot
     digest: b5e491e325cc81c8f5e9af70b9c88deb2db03dba35ac5200ff6bf38c0340f77c
     name: postfix
@@ -297,8 +327,18 @@ entries:
     - postfix/postfix-3.4.8-01-rc1.tgz
     version: 3.4.8-01-rc1
   - apiVersion: v2
+    appVersion: 3.5.6.1
+    created: "2022-04-03T11:16:04.467731757+02:00"
+    description: A HELM chart for deploying Postfix/Dovecot
+    digest: 494659ac55d3fb30ba2fc6a3a667cbf4dce0b6a6280ea3001dab2a6095f817e9
+    name: postfix
+    type: application
+    urls:
+    - postfix/postfix-1.3.0.tgz
+    version: 1.3.0
+  - apiVersion: v2
     appVersion: 3.5.6.0
-    created: "2021-10-02T16:37:49.635812023+02:00"
+    created: "2022-04-03T11:16:04.466589317+02:00"
     description: A HELM chart for deploying Postfix/Dovecot
     digest: ed79b3a0b92e4184776da996c530b9b2a53ba7e690cb3f7712ef74bd0ccd66e0
     name: postfix
@@ -308,7 +348,7 @@ entries:
     version: 1.2.0
   - apiVersion: v2
     appVersion: 3.4.14.0
-    created: "2021-10-02T16:37:49.635182766+02:00"
+    created: "2022-04-03T11:16:04.465879777+02:00"
     description: A HELM chart for deploying Postfix/Dovecot
     digest: fe64939e070cb699bbd5844310e4d384e96bf0114a5aadd56ff5781c9e3ee5fb
     name: postfix
@@ -318,7 +358,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 3.4.10.1
-    created: "2021-10-02T16:37:49.63451442+02:00"
+    created: "2022-04-03T11:16:04.465165524+02:00"
     description: A HELM chart for deploying Postfix/Dovecot
     digest: 6ef5c56825f3f3d74b25dae9935f8d46d4bee8da5e82a3d2e82a7629b3772489
     name: postfix
@@ -328,7 +368,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 3.4.10.0
-    created: "2021-10-02T16:37:49.63361649+02:00"
+    created: "2022-04-03T11:16:04.464498204+02:00"
     description: A HELM chart for deploying Postfix/Dovecot
     digest: 315f80834e4baeb0de5e370ab09efe237c26ff76ab8265a176ccecb9e2293a35
     name: postfix
@@ -339,7 +379,7 @@ entries:
   postfixadmin:
   - apiVersion: v2
     appVersion: 3.2.4-01-rc1
-    created: "2021-10-02T16:37:49.637772602+02:00"
+    created: "2022-04-03T11:16:04.470253234+02:00"
     description: A HELM chart for deploying PostfixAdmin
     digest: 4676f51072c286427c9e505ce8e2f41021ebad3afcfc350b1f01263ff6f4a31f
     name: postfixadmin
@@ -348,8 +388,18 @@ entries:
     - postfixadmin/postfixadmin-3.2.4-01-rc1.tgz
     version: 3.2.4-01-rc1
   - apiVersion: v2
+    appVersion: 3.3.11.0
+    created: "2022-04-03T11:16:04.469766913+02:00"
+    description: A HELM chart for deploying PostfixAdmin
+    digest: ce4eb9999feaf134f3df1e14a3039043612deea42cdf1e68cbd203c227c00bda
+    name: postfixadmin
+    type: application
+    urls:
+    - postfixadmin/postfixadmin-1.3.0.tgz
+    version: 1.3.0
+  - apiVersion: v2
     appVersion: 3.3.10.0
-    created: "2021-10-02T16:37:49.637337257+02:00"
+    created: "2022-04-03T11:16:04.469386637+02:00"
     description: A HELM chart for deploying PostfixAdmin
     digest: 3df797abcf585832ccfd4042fcd38c6353e91e83394330de8b118f7f26785502
     name: postfixadmin
@@ -359,7 +409,7 @@ entries:
     version: 1.2.0
   - apiVersion: v2
     appVersion: 3.2.4.0
-    created: "2021-10-02T16:37:49.636843001+02:00"
+    created: "2022-04-03T11:16:04.468886538+02:00"
     description: A HELM chart for deploying PostfixAdmin
     digest: 6f5b211d58f0df3f5b2a7b530bf92ac6eff2669b10d79bcef1d67393a94fddea
     name: postfixadmin
@@ -370,7 +420,7 @@ entries:
   roundcube:
   - apiVersion: v2
     appVersion: 1.4.3-01-rc1
-    created: "2021-10-02T16:37:49.639527983+02:00"
+    created: "2022-04-03T11:16:04.473226265+02:00"
     description: A HELM chart for deploying Roundcube
     digest: f631c77cb1849fe89269c5653d0225173396773d7f019040b301cab047289e5c
     name: roundcube
@@ -379,8 +429,18 @@ entries:
     - roundcube/roundcube-1.4.3-01-rc1.tgz
     version: 1.4.3-01-rc1
   - apiVersion: v2
+    appVersion: 1.5.2.0
+    created: "2022-04-03T11:16:04.472709981+02:00"
+    description: A HELM chart for deploying Roundcube
+    digest: b850c558f3889cb41d5bf73bfe5ea62c60b0d2b55aeb133425f5e0e245a71ff7
+    name: roundcube
+    type: application
+    urls:
+    - roundcube/roundcube-1.3.0.tgz
+    version: 1.3.0
+  - apiVersion: v2
     appVersion: 1.4.11.0
-    created: "2021-10-02T16:37:49.639120717+02:00"
+    created: "2022-04-03T11:16:04.472330221+02:00"
     description: A HELM chart for deploying Roundcube
     digest: e8cc5478bd39d67af54bf3092b5eff0fffb74f6925cda5d9961c2c20b0e06b6c
     name: roundcube
@@ -390,7 +450,7 @@ entries:
     version: 1.2.0
   - apiVersion: v2
     appVersion: 1.4.8.0
-    created: "2021-10-02T16:37:49.63867997+02:00"
+    created: "2022-04-03T11:16:04.471667222+02:00"
     description: A HELM chart for deploying Roundcube
     digest: 2ca52eafab59c732da4b062e0b8e6deca933dcdd7f45b0416c2e020a6ba3e37b
     name: roundcube
@@ -400,7 +460,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.4.4.0
-    created: "2021-10-02T16:37:49.638216367+02:00"
+    created: "2022-04-03T11:16:04.471139671+02:00"
     description: A HELM chart for deploying Roundcube
     digest: a8b10ae7b6caa457c77ee00118c9aed6a1c3562df68cb4a8935c81842d01cdf9
     name: roundcube
@@ -408,4 +468,4 @@ entries:
     urls:
     - roundcube/roundcube-1.0.0.tgz
     version: 1.0.0
-generated: "2021-10-02T16:37:49.610179374+02:00"
+generated: "2022-04-03T11:16:04.438548681+02:00"
