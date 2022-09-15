@@ -1,0 +1,33 @@
+apiVersion: v1
+entries:
+  mailserver:
+  - apiVersion: v2
+    appVersion: 3.0.0
+    created: "2022-09-15T14:51:06.511530384Z"
+    dependencies:
+    - name: mariadb
+      repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
+      version: 11.0.0
+    - name: postfix
+      repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
+      version: 10.0.0
+    - name: amavis
+      repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
+      version: 10.0.0
+    - name: opendkim
+      repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
+      version: 10.0.0
+    - name: postfixadmin
+      repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
+      version: 10.0.0
+    - name: roundcube
+      repository: https://raw.githubusercontent.com/technicalguru/helm-repo/master/repo
+      version: 10.0.0
+    description: A HELM chart for deploying a complete mailserver
+    digest: 24daf8c129a8e37f1490df2d987915d10167d75e25cf2db27e0fcddfbad448ec
+    name: mailserver
+    type: application
+    urls:
+    - mailserver/mailserver-3.0.0.tgz
+    version: 3.0.0
+generated: "2022-09-15T14:51:06.508426569Z"
