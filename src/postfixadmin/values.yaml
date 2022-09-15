@@ -4,14 +4,19 @@
 nameOverride: ""
 fullnameOverride: ""
 
+# $enabled - do not install anything (useful as dependency chart)
+enabled: true
+
 # $replicaCount - the number of replicas in the deployment to create
 replicaCount: 1
 
 # $image            - definition of docker image
-# $image.repository - the image name (without tag)
+# $image.name       - the image name
+# $image.tag        - the image tag
 # $image.pullPolicy - The pull policy for the image
 image:
-  repository: technicalguru/mailserver-postfixadmin
+  name: technicalguru/mailserver-postfixadmin
+  tag: latest
   pullPolicy: IfNotPresent
 
 # $additionalLabels - additional labels to attach to a pod
@@ -45,7 +50,7 @@ dbPassword: "postfix"
 # PostfixAdmin settings
 ########################
 # $mailserverHostname - hostname to be used for HELO greeting
-# $mailserverPort     - relay port for Amavis mail scanning
+# $mailserverPort     - the port of the SMTP mailserver
 # $setupPassword      - the setup password for PostfixAdmin
 # $abuseEmail         - e-mail of abuse admin
 # $hostmasterEmail    - e-mail of host responsible

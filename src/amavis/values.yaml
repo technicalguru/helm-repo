@@ -4,14 +4,19 @@
 nameOverride: ""
 fullnameOverride: ""
 
+# $enabled - do not install anything (useful as dependency chart)
+enabled: true
+
 # $replicaCount - the number of replicas in the deployment to create
 replicaCount: 1
 
 # $image            - definition of docker image
-# $image.repository - the image name (without tag)
+# $image.name       - the image name
+# $image.tag        - the image tag
 # $image.pullPolicy - The pull policy for the image
 image:
-  repository: technicalguru/mailserver-amavis
+  name: technicalguru/mailserver-amavis
+  tag: latest
   pullPolicy: IfNotPresent
 
 # $additionalLabels - additional labels to attach to a pod
@@ -28,10 +33,14 @@ service:
 # $resources - additional resource requirements
 resources: {}
 
-# $affinityLabel - the key of the node label for affinity stickiness
-# $environment   - the node label the pod is running on (dev, uat, prod)
-affinityLabel: "mailserver/environment"
-environment: "dev"
+# $affinity.enabled   - whether node affinity shall be specified
+# $affinity.nodeLabel - the key of the node label for affinity stickiness
+# $affinity.nodeValues - the node label values the pod is running on (dev, uat, prod)
+affinity:
+  enabled: true
+  nodeLabel: "mailserver/environment"
+  nodeValues: 
+  - "dev"
 
 #####################
 # Mail settings
@@ -46,6 +55,17 @@ relayPort: "10025"
 virusAdminEmail: ""
 notifySenderEmail: ""
 notifyAdminEmail: ""
+
+###############################
+# VolumeClaims to mount
+###############################
+volumeClaims:
+  virusmails: "amavis-virusmails"
+
+###############################
+# SecurityContext on pod level
+###############################
+securityContext: {}
 
 ###########################
 # Additional customization 

@@ -1,3 +1,4 @@
+{{- if .Values.enabled }}
 {{- $files := .Files -}}
 {{ range .Values.configFiles }}
 ---
@@ -10,3 +11,4 @@ data:
   {{ base .mountPath }}: |-
     {{- .content | nindent 4 -}}
 {{- end -}}
+{{- end }}

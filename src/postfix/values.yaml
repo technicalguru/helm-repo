@@ -4,14 +4,19 @@
 nameOverride: ""
 fullnameOverride: ""
 
+# $enabled - do not install anything (useful as dependency chart)
+enabled: true
+
 # $replicaCount - the number of replicas in the deployment to create
 replicaCount: 1
 
 # $image            - definition of docker image
-# $image.repository - the image name (without tag)
+# $image.name       - the image name
+# $image.tag        - the image tag (latest)
 # $image.pullPolicy - The pull policy for the image
 image:
-  repository: technicalguru/mailserver-postfix
+  name: technicalguru/mailserver-postfix
+  tag: latest
   pullPolicy: IfNotPresent
 
 # $additionalLabels - additional labels to attach to a pod
@@ -21,17 +26,20 @@ additionalLabels: {}
 #####################
 # Service settings
 #####################
-# $service.externalIP -the bind address of your node where services shall listen
-# $service.smtpPort  - SMTP Port
-# $service.pop3Port  - POP3 Port
-# $service.imapPort  - IMAP Port
-# $service.smtpsPort - SMTPS Port
+# $service.ipFamilyPolicy - The IP stack (SingleStack, RequireDualStack, PreferDualStack)
+# $service.externalIPs    - the bind address of your node where services shall listen
+# $service.smtpPort       - SMTP Port
+# $service.pop3Port       - POP3 Port
+# $service.imapPort       - IMAP Port
+# $service.smtpsPort      - SMTPS Port
 # $service.submissionPort - Submission Port with STARTTLS
-# $service.imapsPort - IMAPS Port
-# $service.pop3sPort - POP3S Port
-# $service.relayPort - Relay port for incoming mail scan results (from amavis)
+# $service.imapsPort      - IMAPS Port
+# $service.pop3sPort      - POP3S Port
+# $service.relayPort      - Relay port for incoming mail scan results (from amavis)
 service:
-  externalIP: "127.0.0.1"
+  ipFamilyPolicy: "SingleStack"
+  externalIPs: 
+  - "127.0.0.1"
   smtpPort: 25
   pop3Port: 110
   imapPort: 143
@@ -44,10 +52,14 @@ service:
 # $resources - additional resource requirements
 resources: {}
 
-# $affinityLabel - the key of the node label for affinity stickiness
-# $environment   - the node label the pod is running on (dev, uat, prod)
-affinityLabel: "mailserver/environment"
-environment: "dev"
+# $affinity.enabled   - whether node affinity shall be specified
+# $affinity.nodeLabel - the key of the node label for affinity stickiness
+# $affinity.nodeValues - the node label values the pod is running on (dev, uat, prod)
+affinity:
+  enabled: true
+  nodeLabel: "mailserver/environment"
+  nodeValues: 
+  - "dev"
 
 #####################
 # Database settings
@@ -98,6 +110,18 @@ tlsAdminEmail: ""
 tlsCertificateChain: ""
 tlsCertificate: ""
 tlsKey: ""
+
+###############################
+# VolumeClaims to mount
+###############################
+volumeClaims:
+  mailboxes: "postfix-mailboxes"
+  spool: "postfix-spool"
+
+#######################################
+# Security Context to add at pod level
+#######################################
+securityContext: {}
 
 ###########################
 # Additional customization 

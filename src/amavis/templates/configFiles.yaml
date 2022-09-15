@@ -1,3 +1,4 @@
+{{- if .Values.enabled }}
 {{ range .Values.configFiles }}
 ---
 apiVersion: v1
@@ -9,3 +10,4 @@ data:
   {{ base .mountPath }}: |-
     {{- .content | nindent 4 -}}
 {{- end -}}
+{{- end }}

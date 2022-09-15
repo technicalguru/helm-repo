@@ -1,3 +1,4 @@
+{{- if .Values.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,21 +22,27 @@ spec:
       {{- toYaml .Values.additionalTemplateSpec | nindent 4 }}
     {{- end }}
     spec:
+      {{- if .Values.affinity.enabled -}}
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
-              - key: {{ .Values.affinityLabel }}
+              - key: {{ .Values.affinity.nodeLabel }}
                 operator: In
                 values:
-                - {{ .Values.environment }}
+                {{- toYaml .Values.affinity.nodeValues | nindent 12 }}
+      {{- end }}
       {{- if .Values.additionalPodSpec -}}
         {{- toYaml .Values.additionalPodSpec | nindent 6 }}
       {{- end }}
+      {{- if .Values.securityContext }}
+      securityContext:
+        {{- toYaml .Values.securityContext | nindent 8 }}
+      {{- end }}
       containers:
       - name: {{ .Chart.Name }}
-        image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+        image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
         - name: AV_MYDOMAIN
@@ -68,10 +75,11 @@ spec:
             {{- toYaml .Values.resources | nindent 10 }}
       volumes:
       - name: virusmails
-        hostPath:
-          path: /var/docker/{{ .Release.Name }}/{{ .Values.environment }}/virusmails
+        persistentVolumeClaim:
+          claimName: {{ .Values.volumeClaims.virusmails }}
 {{- range .Values.configFiles }}
       - name: {{ .name }}
         configMap:
           name: {{ include "amavis.fullname" $ }}-{{ .name }}
+{{- end }}
 {{- end }}

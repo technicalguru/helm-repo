@@ -5,8 +5,8 @@ description: A HELM chart for deploying Roundcube
 type: application
 
 # Chart version does not reflect the app version
-version: 1.2.0
+version: 10.0.0
 
-# Roundcube version
-appVersion: 1.4.11.0
+# General Roundcube version this chart works with
+appVersion: 1.4.0
 

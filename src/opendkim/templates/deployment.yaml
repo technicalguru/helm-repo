@@ -1,3 +1,4 @@
+{{- if .Values.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,21 +22,23 @@ spec:
       {{- toYaml .Values.additionalTemplateSpec | nindent 4 }}
     {{- end }}
     spec:
+      {{- if .Values.affinity.enabled -}}
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
-              - key: {{ .Values.affinityLabel }}
+              - key: {{ .Values.affinity.nodeLabel }}
                 operator: In
                 values:
-                - {{ .Values.environment }}
+                {{- toYaml .Values.affinity.nodeValues | nindent 12 }}
+      {{- end }}
       {{- if .Values.additionalPodSpec -}}
         {{- toYaml .Values.additionalPodSpec | nindent 6 }}
       {{- end }}
       containers:
       - name: {{ .Chart.Name }}
-        image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+        image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
         - name: DKIM_DOMAIN
@@ -60,3 +63,4 @@ spec:
         {{- end }}
         resources:
             {{- toYaml .Values.resources | nindent 10 }}
+{{- end }}

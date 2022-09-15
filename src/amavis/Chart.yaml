@@ -5,8 +5,8 @@ description: A HELM chart for deploying Amavisd-new/ClamAV/SpamAssassin
 type: application
 
 # Version does not reflect the app version
-version: 1.2.0
+version: 10.0.0
 
-# Amavis version
-appVersion: 2.11.1.0
+# General Amavis version this chart works with
+appVersion: 2.11.0
 
