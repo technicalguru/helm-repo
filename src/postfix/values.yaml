@@ -92,6 +92,7 @@ dbSetupPassword: "password"
 # $tlsAdminEmail           - e-mail of admin to be informed when TLS certificate is about to expire
 # ==> The TLS certificate values shall not be set in your values file directly but given as arguments to the HELM command:
 # ==> e.g. --set-file tlsCertificateChain=/path/to/fullchain.pem --set-file tlsCertificate=/path/to/cert.pem --set-file tlsKey=/path/to/privkey.pem
+# $tlsCreateSecret         - Create the TLS secret (if false it is assumed that the secret already exists)
 # $tlsCertificateChain     - TLS certificate chain (NOT base64 encoded)
 # $tlsCertificate:         - TLS certificate (NOT base64 encoded)
 # $tlsKey                  - TLS key (NOT base64 encoded)
@@ -107,6 +108,7 @@ enableUtf8: "yes"
 tlsCertificatePath: "/var/certificate"
 tlsCAPath: "/etc/ssl/certs"
 tlsAdminEmail: ""
+tlsCreateSecret: true
 tlsCertificateChain: ""
 tlsCertificate: ""
 tlsKey: ""
