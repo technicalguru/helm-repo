@@ -47,7 +47,7 @@ spec:
             secretKeyRef:
               name: "{{ .Values.secret.name }}"
               key: "{{ .Values.secret.passwordKey }}"
-{{- else }
+{{- else }}
           value: "{{ .Values.rootPassword }}"
 {{- end }}
         ports:
