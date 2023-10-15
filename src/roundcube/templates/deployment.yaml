@@ -34,12 +34,33 @@ spec:
           value: "{{ include "roundcube.dbHostname" . }}"
         - name: RC_DB_NAME
           value: "{{ .Values.dbName }}"
+{{- if .Values.dbSecret.name }}
+        - name: RC_DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.dbSecret.name }}"
+              key: "{{ .Values.dbSecret.usernameKey }}"
+        - name: RC_DB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.dbSecret.name }}"
+              key: "{{ .Values.dbSecret.passwordKey }}"
+{{- else }}
         - name: RC_DB_USER
           value: "{{ .Values.dbUser }}"
         - name: RC_DB_PASS
           value: "{{ .Values.dbPassword }}"
+{{- end }}
+{{- if .Values.desSecret.name }}
+        - name: RC_DES_KEY
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.desSecret.name }}"
+              key: "{{ .Values.desSecret.key }}"
+{{- else }}
         - name: RC_DES_KEY
           value: "{{ .Values.desKey }}"
+{{- end }}
         - name: RC_IMAP_SERVER_NAME
           value: "{{ include "roundcube.imapServerHostname" . }}"
         - name: RC_SMTP_SERVER_NAME

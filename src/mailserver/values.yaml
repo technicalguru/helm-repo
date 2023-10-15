@@ -26,6 +26,9 @@ mariadb:
     nodeValues:
     - *default_environment
   environment: *default_environment
+  secret:
+    name: ""
+    passwordKey: password
   rootPassword: "my-db-root-password"
 
 ########################################################################################
@@ -50,6 +53,11 @@ postfix:
     - "your-external-ip"
   dbHostname: "mailserver-mariadb"
   dbName: "mailserver_mail"
+  dbSecret:
+    name: ""
+    usernameKey: username
+    passwordKey: password
+    setupPasswordKey: setupPassword
   dbUser: "postfix"
   dbPassword: "my-db-postfix-password"
   dbSetupPassword: "my-db-root-password"
@@ -97,6 +105,11 @@ opendkim:
   defaultDomain: "my-domain.tld"
   dbHostname: "mailserver-mariadb"
   dbName: "mailserver_opendkim"
+  dbSecret:
+    name: ""
+    usernameKey: username
+    passwordKey: password
+    setupPasswordKey: setupPassword
   dbUser: "opendkim"
   dbPassword: "my-db-opendkim-password"
   dbSetupPassword: "my-db-root-password"
@@ -116,10 +129,16 @@ postfixadmin:
     - *default_environment
   dbHostname: "mailserver-mariadb"
   dbName: "mailserver_mail"
+  dbSecret:
+    name: ""
+    usernameKey: username
+    passwordKey: password
   dbUser: "postfixadmin"
   dbPassword: "my-db-postfix-password"
-  setupPassword: "my-pfa-setup-password"
   mailserverHostname: "mailserver-postfix"
+  setupSecret:
+    name: ""
+    key: password
   abuseEmail: "abuse@my-domain.tld"
   hostmasterEmail: "hostmaster@my-domain.tld"
   postmasterEmail: "postmaster@my-domain.tld"
@@ -140,8 +159,15 @@ roundcube:
     - *default_environment
   dbHostname: "mailserver-mariadb"
   dbName: "mailserver_roundcube"
+  dbSecret:
+    name: ""
+    usernameKey: username
+    passwordKey: password
   dbUser: "roundcube"
   dbPassword: "my-db-roundcube-password"
   defaultDomain: "my-domain.tld"
+  desSecret:
+    name: ""
+    key: desKey
   desKey: ""
 

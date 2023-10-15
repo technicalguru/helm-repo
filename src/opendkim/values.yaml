@@ -55,11 +55,21 @@ defaultDomain: ""
 #####################
 # $dbHostname - the database host
 # $dbName     - the database instance name
-# $dbUser     - the database user to use
-# $dbPassword - the password of the database user to use
-# $dbSetupPassword - the root password for setup
+# $dbSecret   - Kubernetes secret to be used for retrieving passwords
+#   $name             - Name of Kubernetes secret (set empty when using direct values)
+#   $usernameKey      - key in secret that holds the database username
+#   $passwordKey      - key in secret that holds the password of the database user
+#   $setupPasswordKey - key in secret that holds the root password for setup
+# $dbUser     - the database user to use (when not using secret)
+# $dbPassword - the password of the database user to use (when not using secret)
+# $dbSetupPassword - the root password for setup (when not using secret)
 dbHostname: "mariadb"
 dbName: "opendkim"
+dbSecret:
+  name: ""
+  usernameKey: username
+  passwordKey: password
+  setupPasswordKey: setupPassword
 dbUser: "opendkim"
 dbPassword: "opendkim"
 dbSetupPassword: "password"

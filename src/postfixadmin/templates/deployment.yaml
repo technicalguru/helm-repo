@@ -34,12 +34,33 @@ spec:
           value: "{{ include "postfixadmin.dbHostname" . }}"
         - name: PFA_DB_NAME
           value: "{{ .Values.dbName }}"
+{{- if .Values.dbSecret.name }}
+        - name: PFA_DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.dbSecret.name }}"
+              key: "{{ .Values.dbSecret.usernameKey }}"
+        - name: PFA_DB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.dbSecret.name }}"
+              key: "{{ .Values.dbSecret.passwordKey }}"
+{{- else }}
         - name: PFA_DB_USER
           value: "{{ .Values.dbUser }}"
         - name: PFA_DB_PASS
           value: "{{ .Values.dbPassword }}"
+{{- end }}
+{{- if .Values.setupSecret.name }}
+        - name: PFA_SETUP_PASS
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.setupSecret.name }}"
+              key: "{{ .Values.setupSecret.key }}"
+{{- else }}
         - name: PFA_SETUP_PASS
           value: "{{ .Values.setupPassword }}"
+{{- end }}
         - name: PFA_POSTFIX_SERVER
           value: "{{ include "postfixadmin.mailserverHostname" . }}"
         - name: PFA_POSTFIX_PORT

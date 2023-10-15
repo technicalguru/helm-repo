@@ -38,10 +38,18 @@ resources: {}
 #####################
 # $dbHostname - the database host
 # $dbName     - the database instance name
-# $dbUser     - the database user to use
-# $dbPassword - the password of the database user to use
+# $dbSecret   - Kubernetes secret to be used for retrieving passwords
+#   $name             - Name of Kubernetes secret (set empty when using direct values)
+#   $usernameKey      - key in secret that holds the database username
+#   $passwordKey      - key in secret that holds the password of the database user
+# $dbUser     - the database user to use (when not using secret)
+# $dbPassword - the password of the database user to use (when not using secret)
 dbHostname: "mariadb"
 dbName: "roundcube"
+dbSecret:
+  name: ""
+  usernameKey: username
+  passwordKey: password
 dbUser: "roundcube"
 dbPassword: "roundcube"
 
@@ -52,10 +60,16 @@ dbPassword: "roundcube"
 # $imapServerHostname - hostname to be used for HELO greeting
 # $smtpServerHostname - hostname to be used for HELO greeting
 # $defaultDomain      - The default domain for login users
-# $desKey             - a unique 24-char string for your server
+# $desSecret          - Kubernetes secret to be used for retrieving the DES key
+#   $name                - Name of Kubernetes secret (set empty when using direct values)
+#   $key                 - key in secret that holds the DES key
+# $desKey             - a unique 24-char string for your server (when not using secret)
 imapServerHostname: "postfix"
 smtpServerHostname: "postfix"
 defaultDomain: "localdomain"
+desSecret:
+  name: ""
+  key: desKey
 desKey: ""
 
 ###################################

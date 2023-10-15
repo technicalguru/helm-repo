@@ -49,6 +49,15 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
+# PREFERRED METHOD TO PROVIDE THE DATABASE ROOT PASSWORD
+# the password for the root account when initially setting up the DB.
+# $secret.name        - the name of secret (empty when not using a secret)
+# $secret.passwordKey - name of key in secret that holds the password
+secret:
+  name: ""
+  passwordKey: "password"
+
+# THIS SECTION IS REQUIRED ONLY WHEN NO SECRET WILL BE USED
 # $rootPassword - the password for the root account when initially settig up the DB
 #                 ATTENTION! You shall change the password manually after the DB is set up
 rootPassword: "root-password"

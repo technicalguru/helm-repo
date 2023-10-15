@@ -42,7 +42,14 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
         - name: MYSQL_ROOT_PASSWORD
+{{- if .Values.secret.name }}
+          valueFrom:
+            secretKeyRef:
+              name: "{{ .Values.secret.name }}"
+              key: "{{ .Values.secret.passwordKey }}"
+{{- else }
           value: "{{ .Values.rootPassword }}"
+{{- end }}
         ports:
           - name: mysql
             containerPort: 3306

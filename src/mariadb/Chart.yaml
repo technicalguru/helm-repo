@@ -3,8 +3,8 @@ name: mariadb
 description: A HELM chart for deploying MariaDB (with auditing)
 type: application
 
-# The chart version will rflect the app version
-version: 11.0.0
+# The chart version will reflect the app version
+version: 11.1.0
 
 # MariaDB version
 appVersion: 10.9.0
