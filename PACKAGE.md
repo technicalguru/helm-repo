@@ -18,3 +18,7 @@
 1. git commit -a -m "Release mailserver package"
 1. git push
 
+# In case of local cache problems:
+
+1. rm -rf ~/.helm/cache/archive/*
+1. rm -rf ~/.helm/repository/cache/*
