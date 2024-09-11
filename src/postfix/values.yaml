@@ -38,6 +38,7 @@ additionalLabels: {}
 # $service.relayPort      - Relay port for incoming mail scan results (from amavis)
 service:
   ipFamilyPolicy: "SingleStack"
+  externalTrafficPolicy: Local
   externalIPs: 
   - "127.0.0.1"
   smtpPort: 25

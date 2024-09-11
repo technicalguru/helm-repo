@@ -22,16 +22,16 @@ spec:
       {{- toYaml .Values.additionalTemplateSpec | nindent 4 }}
     {{- end }}
     spec:
-      {{- if .Values.affinity.enabled -}}
+      {{- if .Values.affinity.enabled }}
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
-              - key: {{ .Values.affinity.nodeLabel }}
+              - key: "{{ .Values.affinity.nodeLabel }}"
                 operator: In
                 values:
-                {{- toYaml .Values.affinity.nodeValues | nindent 12 }}
+                {{- toYaml .Values.affinity.nodeValues | nindent 16 }}
       {{- end }}
       {{- if .Values.additionalPodSpec -}}
         {{- toYaml .Values.additionalPodSpec | nindent 6 }}

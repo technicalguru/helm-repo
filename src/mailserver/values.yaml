@@ -49,6 +49,7 @@ postfix:
     spool: "mailserver-spool"
   service:
     ipFamilyPolicy: SingleStack
+    externalTrafficPolicy: Local
     externalIPs: 
     - "your-external-ip"
   dbHostname: "mailserver-mariadb"
